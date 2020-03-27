@@ -1,11 +1,14 @@
 package com.aurriola.movietop.adapter
 
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.aurriola.movietop.R
 import com.aurriola.movietop.adapter.model.PopularMoviewModel
+import com.aurriola.movietop.utils.UtilsCommons
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.row_movie.view.*
 
@@ -33,12 +36,14 @@ class PopularMovieAdapter: RecyclerView.Adapter<PopularMovieAdapter.StarRepoView
        return popularResponses.size
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: StarRepoViewHolder, position: Int) {
 
         holder.title.text = popularResponses[position].title
         holder.description.text = popularResponses[position].overview
         holder.realese_date.text = popularResponses[position].releaseDate
-        Picasso.get().load(URL_IMG+popularResponses[position].posterPath).into(holder.iv_poster);
+       // holder.realese_date.text = UtilsCommons().convertDate(popularResponses[position].releaseDate)
+            Picasso.get().load(URL_IMG+popularResponses[position].posterPath).into(holder.iv_poster);
     }
 
     public  fun addPopularMoview(arrayRepo: List<PopularMoviewModel>)

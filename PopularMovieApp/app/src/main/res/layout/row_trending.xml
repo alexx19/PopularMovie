@@ -39,6 +39,7 @@
                     android:layout_height="wrap_content"
                     android:maxLines="2"
                     android:paddingStart="6dp"
+                    android:textStyle="bold"
                     android:text="Example"
                     android:textColor="#FFFFFF" />
             </LinearLayout>

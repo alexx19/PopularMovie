@@ -14,19 +14,19 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="8dp"
                 android:text="Populares"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/list_movie"
+                android:id="@+id/list_trending"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
@@ -35,17 +35,19 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="vertical">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Mejor valoradas"
                 android:paddingStart="8dp"
+                android:text="Mejor valoradas"
 
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
+
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/list02"
+                android:id="@+id/list_popular"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
@@ -54,20 +56,24 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="vertical">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Proximamente"
                 android:paddingStart="8dp"
+                android:text="Proximamente"
+                android:textStyle="bold" />
 
-                android:textStyle="bold"/>
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/list03"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+                    android:id="@+id/list_upcoming"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:numColumns="1"
+                    android:orientation="vertical" />
         </LinearLayout>
     </LinearLayout>
 

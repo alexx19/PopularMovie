@@ -8,6 +8,7 @@ import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.aurriola.movietop.R
 import com.aurriola.movietop.adapter.model.PopularMoviewModel
+import com.aurriola.movietop.utils.URL_IMG
 import com.aurriola.movietop.utils.UtilsCommons
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.row_movie.view.*
@@ -16,12 +17,10 @@ class PopularMovieAdapter: RecyclerView.Adapter<PopularMovieAdapter.StarRepoView
 
     val popularResponses= ArrayList<PopularMoviewModel>()
 
-    val URL_IMG = "https://image.tmdb.org/t/p/w500/"
-
     class StarRepoViewHolder(val view : View) : RecyclerView.ViewHolder(view){
         val title = view.txt_title
-        val description = view.txt_description
-        val realese_date =  view.txt_date
+        //val description = view.txt_description
+        //val realese_date =  view.txt_date
         val iv_poster = view.iv_poster
 
 
@@ -40,10 +39,10 @@ class PopularMovieAdapter: RecyclerView.Adapter<PopularMovieAdapter.StarRepoView
     override fun onBindViewHolder(holder: StarRepoViewHolder, position: Int) {
 
         holder.title.text = popularResponses[position].title
-        holder.description.text = popularResponses[position].overview
-        holder.realese_date.text = popularResponses[position].releaseDate
+       // holder.description.text = popularResponses[position].overview
+       // holder.realese_date.text = popularResponses[position].releaseDate
        // holder.realese_date.text = UtilsCommons().convertDate(popularResponses[position].releaseDate)
-            Picasso.get().load(URL_IMG+popularResponses[position].posterPath).into(holder.iv_poster);
+            Picasso.get().load(URL_IMG+popularResponses[position].backdropPath).into(holder.iv_poster);
     }
 
     public  fun addPopularMoview(arrayRepo: List<PopularMoviewModel>)

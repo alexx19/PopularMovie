@@ -3,8 +3,8 @@ package com.aurriola.movietop
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.aurriola.movietop.adapter.PopularMovieAdapter
 import com.aurriola.movietop.adapter.model.PopularMoviewModel
 import com.aurriola.movietop.network.MovieClient
@@ -23,9 +23,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val linnerManager = LinearLayoutManager(applicationContext)
-        list_movie.layoutManager = linnerManager
+        val linnerManager = LinearLayoutManager(applicationContext, RecyclerView.HORIZONTAL,false)
 
+        list_movie.layoutManager = linnerManager
 
         popularMovieAdapter = PopularMovieAdapter()
 

@@ -1,105 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="5dp">
+    android:layout_height="match_parent">
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_inner"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:ignore="MissingConstraints">
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        card_view:cardBackgroundColor="@color/cardview_dark_background"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardElevation="0dp">
 
-        <ImageView
-            android:id="@+id/iv_poster"
-            android:layout_width="100dp"
-            android:layout_height="150dp"
-            android:src="@android:color/holo_red_dark"
-            app:layout_constrainedWidth="true"
-            tools:ignore="MissingConstraints" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_marginStart="100dp"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/txt_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:paddingStart="8dp"
-                android:text="TextView"
-                android:textStyle="bold"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="RtlSymmetry" />
+            <ImageView
+                android:id="@+id/iv_poster"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
 
-            <TextView
-                android:id="@+id/txt_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:paddingStart="8dp"
-                android:text="TextView"
-                app:layout_constraintTop_toBottomOf="@+id/txt_title"
-                tools:ignore="RtlSymmetry" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom">
 
-            <TextView
-                android:id="@+id/txt_description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:paddingStart="8dp"
-                android:ellipsize="end"
-                android:lines="3"
-                android:text="TextView"
-                app:layout_constraintTop_toBottomOf="@+id/txt_date"
-                tools:ignore="RtlSymmetry" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/txt_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:paddingStart="6dp"
+                    android:text="Example"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+
+        </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- <ImageView
-         android:id="@+id/iv_poster"
-         android:layout_width="100dp"
-         android:layout_height="100dp"
-
-         android:contentDescription="TODO"
-
-         tools:ignore="MissingConstraints" />
-
-
-     <TextView
-         android:id="@+id/txt_title"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:text="TextView"
-         android:textStyle="bold"
-         app:layout_constraintLeft_toRightOf="@+id/iv_poster"
-         app:layout_constraintTop_toTopOf="parent"
-         tools:ignore="MissingConstraints" />
-
-
-     <TextView
-         android:id="@+id/txt_date"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:text="TextView"
-         app:layout_constraintLeft_toRightOf="@+id/iv_poster"
-         app:layout_constraintTop_toBottomOf="@+id/txt_title"
-         tools:ignore="MissingConstraints,RtlSymmetry" />
-
-     <TextView
-         android:id="@+id/txt_description"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:text="TextView"
-         app:layout_constraintLeft_toRightOf="@+id/iv_poster"
-         app:layout_constraintTop_toBottomOf="@+id/txt_date"
-         tools:ignore="MissingConstraints" />
--->
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

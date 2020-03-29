@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="8dp"
-                android:text="Populares"
+                android:text="@string/toppopular"
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -42,7 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="8dp"
-                android:text="Mejor valoradas"
+                android:text="@string/toprated"
 
                 android:textStyle="bold" />
 
@@ -63,7 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="8dp"
-                android:text="Proximamente"
+                android:text="@string/upcoming"
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView

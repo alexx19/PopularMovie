@@ -4,14 +4,9 @@ import com.aurriola.movietop.adapter.model.PopularResponse
 import com.aurriola.movietop.utils.API_KEY
 import io.reactivex.Observable
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 interface IMovieService {
-    @GET("movie/popular?api_key=${ API_KEY }")
-    fun getPopularMovie(): Observable<PopularResponse>
-
-    @GET("movie/top_rated?api_key=${ API_KEY }")
-    fun getTopRated(): Observable<PopularResponse>
-
-    @GET("movie/upcoming?api_key=${ API_KEY }")
-    fun getUpcoming(): Observable<PopularResponse>
+    @GET("movie/{query_movie}?api_key=${ API_KEY }")
+    fun getQueryMovie(@Path("query_movie") query_movie:String): Observable<PopularResponse>
 }

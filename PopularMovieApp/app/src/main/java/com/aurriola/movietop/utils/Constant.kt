@@ -1,7 +1,7 @@
 package com.aurriola.movietop.utils
 
 const val API_KEY = ""
-const val URL_IMG = "https://image.tmdb.org/t/p/w500/"
+const val URL_IMG = "https://image.tmdb.org/t/p/w500"
 
 
 //call end_point

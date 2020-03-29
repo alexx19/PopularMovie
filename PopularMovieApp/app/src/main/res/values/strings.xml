@@ -3,4 +3,6 @@
     <string name="toppopular">Populares</string>
     <string name="toprated">Más valorados</string>
     <string name="upcoming">Próximamente</string>
+    <string name="overview">General</string>
+    <string name="trailer">Videos</string>
 </resources>

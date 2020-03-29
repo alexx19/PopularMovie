@@ -1,12 +1,15 @@
 package com.aurriola.movietop
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.aurriola.movietop.activity.OverviewMovieActivity
 import com.aurriola.movietop.adapter.PopularMovieAdapter
 import com.aurriola.movietop.adapter.TopRatedMovieAdapter
 import com.aurriola.movietop.adapter.UpcomingMovieAdapter
@@ -58,6 +61,15 @@ class MainActivity : AppCompatActivity() {
 
         getUpcoming()
         observerUpcoming()
+
+        popularMoviewModel.onItemClick = {
+            movieItem ->
+            Log.d("MainActivity", movieItem.originalTitle)
+            val intent = Intent(this, OverviewMovieActivity::class.java)
+            intent.putExtra("movie_id",movieItem.id)
+            startActivity(intent)
+        }
+
     }
 
     private fun getTopRated() {

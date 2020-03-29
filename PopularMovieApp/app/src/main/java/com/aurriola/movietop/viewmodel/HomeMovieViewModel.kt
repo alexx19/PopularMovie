@@ -22,7 +22,7 @@ class HomeMovieViewModel : ViewModel() {
     private val trendingMovie = MutableLiveData<PopularResponse>()
     private val upcomingMovie = MutableLiveData<PopularResponse>()
 
-    val homeRepository = HomeRepository(HomeMovieRemote())
+    private val homeRepository = HomeRepository(HomeMovieRemote())
 
     @SuppressLint("CheckResult")
     fun getTopRated() {

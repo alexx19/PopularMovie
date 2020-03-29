@@ -26,38 +26,38 @@ class HomeMovieViewModel : ViewModel() {
 
     @SuppressLint("CheckResult")
     fun getTopRated() {
-        val disposable = homeRepository
+        val disposableTopRated = homeRepository
             .fetchMovie(TOPRATED)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe { response ->
                 topRatedMovie.value = response
             }
-        compositeDisposable.addAll(disposable)
+        compositeDisposable.add(disposableTopRated)
     }
 
     @SuppressLint("CheckResult")
     fun getTrending() {
-        val disposable = homeRepository
+        val disposablePopular = homeRepository
             .fetchMovie(POPULAR)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe { response ->
                 trendingMovie.value = response
             }
-        compositeDisposable.addAll(disposable)
+        compositeDisposable.add(disposablePopular)
     }
 
     @SuppressLint("CheckResult")
     fun getUpcoming() {
-        val disposable = homeRepository
+        val disposableUpcoming = homeRepository
             .fetchMovie(UPCOMING)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe { response ->
                 upcomingMovie.value = response
             }
-        compositeDisposable.addAll(disposable)
+        compositeDisposable.add(disposableUpcoming)
     }
 
     //Notifican al ui, el cambio en la data.

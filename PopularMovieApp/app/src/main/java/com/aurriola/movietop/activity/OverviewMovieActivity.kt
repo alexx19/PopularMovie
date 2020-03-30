@@ -6,12 +6,8 @@ import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.aurriola.movietop.R
-import com.aurriola.movietop.utils.URL_IMG
 import com.aurriola.movietop.viewmodel.OverviewViewModel
-import com.squareup.picasso.Callback
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_overview_movie.*
-import kotlinx.android.synthetic.main.activity_overview_movie.view.*
 
 class OverviewMovieActivity : AppCompatActivity() {
 

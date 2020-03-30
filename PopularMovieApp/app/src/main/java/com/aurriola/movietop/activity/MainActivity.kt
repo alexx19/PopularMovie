@@ -1,4 +1,4 @@
-package com.aurriola.movietop
+package com.aurriola.movietop.activity
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -9,15 +9,11 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.aurriola.movietop.activity.OverviewMovieActivity
+import com.aurriola.movietop.R
 import com.aurriola.movietop.adapter.PopularMovieAdapter
 import com.aurriola.movietop.adapter.TopRatedMovieAdapter
 import com.aurriola.movietop.adapter.UpcomingMovieAdapter
-import com.aurriola.movietop.adapter.model.PopularMoviewModel
-import com.aurriola.movietop.network.MovieClient
 import com.aurriola.movietop.viewmodel.HomeMovieViewModel
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

@@ -11,5 +11,5 @@ data class PopularResponse (
     @SerializedName("total_pages")
     val totalPages: Long,
 
-    val results: List<PopularMoviewModel>
+    val results: List<PopularMovieModel>
 )

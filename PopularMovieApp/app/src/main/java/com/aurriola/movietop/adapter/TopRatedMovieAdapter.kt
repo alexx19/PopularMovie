@@ -7,14 +7,14 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.aurriola.movietop.R
-import com.aurriola.movietop.adapter.model.PopularMoviewModel
+import com.aurriola.movietop.adapter.model.PopularMovieModel
 import com.aurriola.movietop.utils.URL_IMG
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.row_popular.view.*
 
 class TopRatedMovieAdapter: RecyclerView.Adapter<TopRatedMovieAdapter.StarRepoViewHolder>() {
 
-    val popularResponses= ArrayList<PopularMoviewModel>()
+    val popularResponses= ArrayList<PopularMovieModel>()
 
     class StarRepoViewHolder(val view : View) : RecyclerView.ViewHolder(view){
         val title = view.txt_title
@@ -44,7 +44,7 @@ class TopRatedMovieAdapter: RecyclerView.Adapter<TopRatedMovieAdapter.StarRepoVi
             Picasso.get().load(URL_IMG+popularResponses[position].posterPath).into(holder.iv_poster);
     }
 
-    public  fun addPopularMoview(arrayRepo: List<PopularMoviewModel>)
+    public  fun addPopularMoview(arrayRepo: List<PopularMovieModel>)
     {
         popularResponses.addAll(arrayRepo)
         notifyDataSetChanged()

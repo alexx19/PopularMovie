@@ -2,7 +2,7 @@ package com.aurriola.movietop.adapter.model
 
 import com.google.gson.annotations.SerializedName
 
-data class PopularMoviewModel(
+data class PopularMovieModel(
     val popularity: Double,
 
     @SerializedName("vote_count")

@@ -5,4 +5,8 @@
     <string name="upcoming">Próximamente</string>
     <string name="overview">General</string>
     <string name="trailer">Videos</string>
+
+
+    <!-- ABOUT -->
+    <string name="about_play_video"><div>Icons made by <a href="https://www.flaticon.com/authors/alfredo-hernandez" title="Alfredo Hernandez">Alfredo Hernandez</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></string>
 </resources>

@@ -13,6 +13,7 @@ import com.aurriola.movietop.R
 import com.aurriola.movietop.adapter.PopularMovieAdapter
 import com.aurriola.movietop.adapter.TopRatedMovieAdapter
 import com.aurriola.movietop.adapter.UpcomingMovieAdapter
+import com.aurriola.movietop.adapter.model.PopularMovieModel
 import com.aurriola.movietop.viewmodel.HomeMovieViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -60,12 +61,24 @@ class MainActivity : AppCompatActivity() {
 
         popularMoviewModel.onItemClick = {
             movieItem ->
-            Log.d("MainActivity", movieItem.originalTitle)
-            val intent = Intent(this, OverviewMovieActivity::class.java)
-            intent.putExtra("movie_id",movieItem.id)
-            startActivity(intent)
+            moveToTrailerActivity(movieItem)
+        }
+        topRatedMovieAdapter.onItemClick = {
+                movieItem ->
+            moveToTrailerActivity(movieItem)
+        }
+        upcomingMovieAdapter.onItemClick = {
+                movieItem ->
+            moveToTrailerActivity(movieItem)
         }
 
+    }
+
+    private fun moveToTrailerActivity(movieItem: PopularMovieModel) {
+        Log.d("MainActivity", movieItem.originalTitle)
+        val intent = Intent(this, OverviewMovieActivity::class.java)
+        intent.putExtra("movie_id",movieItem.id)
+        startActivity(intent)
     }
 
     private fun getTopRated() {

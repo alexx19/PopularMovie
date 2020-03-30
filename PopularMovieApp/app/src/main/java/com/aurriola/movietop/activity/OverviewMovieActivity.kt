@@ -83,6 +83,7 @@ class OverviewMovieActivity : AppCompatActivity() {
                 txtOverview.text = response.overview
                 txtGenres.text = response.genres[0].name
                 overviewMovieViewModel.loadImage(img_cartel, response.posterPath)
+                donut_progress.progress = response.voteAverage.toFloat()*10
             })
     }
 

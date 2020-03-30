@@ -16,13 +16,19 @@ class TopRatedMovieAdapter: RecyclerView.Adapter<TopRatedMovieAdapter.StarRepoVi
 
     val popularResponses= ArrayList<PopularMovieModel>()
 
-    class StarRepoViewHolder(val view : View) : RecyclerView.ViewHolder(view){
+    var onItemClick: ((PopularMovieModel) -> Unit)? = null
+
+    inner class StarRepoViewHolder(val view : View) : RecyclerView.ViewHolder(view){
         val title = view.txt_title
         //val description = view.txt_description
         //val realese_date =  view.txt_date
         val iv_poster = view.iv_poster
 
-
+        init {
+            view.setOnClickListener {
+                onItemClick?.invoke(popularResponses[adapterPosition])
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StarRepoViewHolder {

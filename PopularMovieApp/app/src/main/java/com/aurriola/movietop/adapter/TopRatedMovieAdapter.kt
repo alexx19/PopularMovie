@@ -20,8 +20,6 @@ class TopRatedMovieAdapter: RecyclerView.Adapter<TopRatedMovieAdapter.StarRepoVi
 
     inner class StarRepoViewHolder(val view : View) : RecyclerView.ViewHolder(view){
         val title = view.txt_title
-        //val description = view.txt_description
-        //val realese_date =  view.txt_date
         val iv_poster = view.iv_poster
 
         init {
@@ -44,9 +42,6 @@ class TopRatedMovieAdapter: RecyclerView.Adapter<TopRatedMovieAdapter.StarRepoVi
     override fun onBindViewHolder(holder: StarRepoViewHolder, position: Int) {
 
         holder.title.text = popularResponses[position].title
-       // holder.description.text = popularResponses[position].overview
-       // holder.realese_date.text = popularResponses[position].releaseDate
-       // holder.realese_date.text = UtilsCommons().convertDate(popularResponses[position].releaseDate)
             Picasso.get().load(URL_IMG+popularResponses[position].posterPath).into(holder.iv_poster);
     }
 

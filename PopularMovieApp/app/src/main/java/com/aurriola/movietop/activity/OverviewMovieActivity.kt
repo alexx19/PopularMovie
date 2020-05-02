@@ -45,13 +45,6 @@ class OverviewMovieActivity : AppCompatActivity() {
         getMovieTrailer(movie_id)
         observableMovieTrailer()
 
-
-        /*trailerListAdapter.onItemClick{
-            itemResp ->
-            Log.d(TAG,itemResp.id+"")
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=")))
-        }*/
-
         trailerListAdapter.onItemClick = { videoItemResp ->
             Log.d(TAG, videoItemResp.id)
             startActivity(

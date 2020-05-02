@@ -42,9 +42,6 @@ class PopularMovieAdapter: RecyclerView.Adapter<PopularMovieAdapter.StarRepoView
     override fun onBindViewHolder(holder: StarRepoViewHolder, position: Int) {
 
         holder.title.text = popularResponses[position].title
-        // holder.description.text = popularResponses[position].overview
-        // holder.realese_date.text = popularResponses[position].releaseDate
-        // holder.realese_date.text = UtilsCommons().convertDate(popularResponses[position].releaseDate)
         Picasso.get().load(URL_IMG + popularResponses[position].backdropPath).into(holder.iv_poster);
     }
 

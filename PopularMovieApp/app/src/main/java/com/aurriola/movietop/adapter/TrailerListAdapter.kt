@@ -1,11 +1,8 @@
 package com.aurriola.movietop.adapter
 
-import android.content.Intent
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.aurriola.movietop.R
 import com.aurriola.movietop.adapter.model.VideoResult
@@ -40,8 +37,6 @@ class TrailerListAdapter: RecyclerView.Adapter<TrailerListAdapter.TrailerListVie
     }
 
     inner class TrailerListViewHolder(val view: View) : RecyclerView.ViewHolder(view){
-        val img_preview = view.iv_poster_trailer
-        val btnImgPlay = view.btnimg_play
         val txtTile = view.txtNameYoutube
 
         init {

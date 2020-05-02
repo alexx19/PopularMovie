@@ -48,13 +48,11 @@ class UpcomingMovieAdapter: RecyclerView.Adapter<UpcomingMovieAdapter.StarRepoVi
     override fun onBindViewHolder(holder: StarRepoViewHolder, position: Int) {
 
         holder.title.text = popularResponses[position].title
-        // holder.description.text = popularResponses[position].overview
          holder.realese_date.text = popularResponses[position].releaseDate
-        // holder.realese_date.text = UtilsCommons().convertDate(popularResponses[position].releaseDate)
         Picasso.get().load(URL_IMG+popularResponses[position].backdropPath).into(holder.iv_poster);
     }
 
-    public  fun addPopularMoview(arrayRepo: List<PopularMovieModel>)
+    fun addPopularMoview(arrayRepo: List<PopularMovieModel>)
     {
         popularResponses.addAll(arrayRepo)
         notifyDataSetChanged()
@@ -62,50 +60,3 @@ class UpcomingMovieAdapter: RecyclerView.Adapter<UpcomingMovieAdapter.StarRepoVi
     }
 
 }
-    /*private val popularResponses= ArrayList<PopularMoviewModel>()
-
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
-        val view: View?
-        val upComingViewHolder:UpComingViewHolder
-        if (convertView == null) {
-            view = View.inflate(context,R.layout.row_upcoming,null)
-            upComingViewHolder = UpComingViewHolder(view)
-            view.setTag(upComingViewHolder)
-        }else{
-            view = convertView
-            upComingViewHolder = view.tag as UpComingViewHolder
-        }
-
-        upComingViewHolder.title.text = popularResponses[position].title
-        upComingViewHolder.realese_date.text = popularResponses[position].releaseDate
-        Picasso.get().load(URL_IMG+popularResponses[position].backdropPath).into(upComingViewHolder.iv_poster);
-
-        return view
-    }
-
-    override fun getItem(position: Int): Any {
-        return popularResponses[position]
-    }
-
-    override fun getItemId(position: Int): Long {
-        return position.toLong()
-    }
-
-    override fun getCount(): Int {
-        return popularResponses.size
-    }
-
-    private class UpComingViewHolder(val view : View){
-        val title = view.txt_title
-        val realese_date =  view.txt_release_date
-        val iv_poster = view.iv_poster
-
-
-    }
-
-    fun addPopularMoview(arrayRepo: List<PopularMoviewModel>)
-    {
-        popularResponses.addAll(arrayRepo)
-        notifyDataSetChanged()
-
-    }*/
